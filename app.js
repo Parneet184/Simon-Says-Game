@@ -61,7 +61,7 @@ function checkAns(idx) {
             setTimeout(levelUp, 250);
         }
     } else {
-        h2.innerHTML = `Game Over! Your Score was <b>${level}</b> <br> Press any key to start.`;
+        h2.innerHTML = `Game Over! Your Score was <b>${level}</b> <br> Click the start to play again.`;
 
         HighestScore = Math.max(HighestScore, level);
         document.querySelector("h3").innerText = `Highest Score: ${HighestScore}`;
@@ -70,6 +70,7 @@ function checkAns(idx) {
         setTimeout(function () {
             document.querySelector("body").style.backgroundColor = "white";
         }, 150);
+        startBtn.classList.remove("hidden"); // Show start button again
         reset();
     }
 }
